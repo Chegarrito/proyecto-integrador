@@ -71,8 +71,8 @@ def main():
         print("[2].....................................Baja de carros")
         print("[3].....................................Modificaciones de carros")
         print("[4].....................................Busqueda de carros")
-        print("[5].....................................Salir")
-        print("[6].....................................Imprimir carros")
+        print("[5].....................................Impresion de carros")
+        print("[6].....................................Salir")
 
         number = input("Ingresa el número de la opción a la que quieres acceder: ")
         # Comprobacion de que es numero lo que ingreso el usuario para que no crashee el programa
@@ -109,6 +109,7 @@ def main():
                     # For loop para imprimir 100 brincos de linea, esto es para darle un refresh a la pagina
                     for i in range(100):
                         print("\n")
+                        
         # Opcion para modificar la informacion de un carro
         elif number == 3:
             while salida == 'si':
@@ -122,6 +123,7 @@ def main():
                     # For loop para imprimir 100 saltos de linea, esto es para darle un refresh a la pagina
                     for i in range(100):
                         print("\n")
+
         # Opcion para buscar carros
         elif number == 4:
             while salida == 'si':
@@ -135,12 +137,14 @@ def main():
                     # For loop para imprimir 100 saltos de linea, esto es para darle un refresh a la pagina
                     for i in range(100):
                         print("\n")
-        # Opcion de salida
+
+        # Opcion para imprimir la lista de carros
         elif number == 5:
+            imprimir_carros(carros)
+        # Opcion de salida
+        elif number == 6:
             print("Gracias por su visita! Esperamos que vuelvas pronto =D")
             break
-        elif number == 6:
-            imprimir_carros(carros)
         else:
             # For loop para imprimir 100 brincos de linea, esto es para darle un refresh a la pagina
             for i in range(100):
