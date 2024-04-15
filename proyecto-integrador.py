@@ -94,8 +94,6 @@ def main():
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
                 if salida != "si":
-                    # For loop para imprimir 100 brincos de linea, esto es para darle un refresh a la pagina
-                    for i in range(100):
                         print("\n")
 
         # Opcion para eliminar un carro del sistema                    
@@ -106,10 +104,8 @@ def main():
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
                 if salida != "si":
-                    # For loop para imprimir 100 brincos de linea, esto es para darle un refresh a la pagina
-                    for i in range(100):
                         print("\n")
-                        
+
         # Opcion para modificar la informacion de un carro
         elif number == 3:
             while salida == 'si':
@@ -120,8 +116,6 @@ def main():
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
                 if salida != "si":
-                    # For loop para imprimir 100 saltos de linea, esto es para darle un refresh a la pagina
-                    for i in range(100):
                         print("\n")
 
         # Opcion para buscar carros
@@ -134,8 +128,6 @@ def main():
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
                 if salida != "si":
-                    # For loop para imprimir 100 saltos de linea, esto es para darle un refresh a la pagina
-                    for i in range(100):
                         print("\n")
 
         # Opcion para imprimir la lista de carros
@@ -146,9 +138,6 @@ def main():
             print("Gracias por su visita! Esperamos que vuelvas pronto =D")
             break
         else:
-            # For loop para imprimir 100 brincos de linea, esto es para darle un refresh a la pagina
-            for i in range(100):
-                        print("\n")
             print("ERROR. Intenta ingresando un numero de la lista")
 
 
