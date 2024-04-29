@@ -41,6 +41,57 @@ def baja_carros(carros): # Función para eliminar carros
             break
     if not encontrado: # Si no se encontró el carro
         print("Carro no encontrado.")
+def editar(carros):
+    imprimir_carros(carros) # Imprime los carros para que el usuario pueda ver los números
+    editar = int(input("Ingrese el numero del carro que desea editar: "))  # Convierte input a int
+    
+    encontrado = False # Variable para saber si se encontró el carro
+    for carro in carros: # Itera sobre la lista de carros
+        if carro["Numero"] == editar:  # Compara el número del carro con el número a editar
+            encontrado = True # Cambia a True si se encuentra el carro
+            print("Carro encontrado, sus datos son:")
+            for clave, valor in carro.items(): # Itera sobre las claves y valores del carro
+                print(clave + ": " + str(valor)) #Convierte valor a string
+            
+            confirmacion = input("¿Seguro que desea editar este carro? (si/no): ")
+            if confirmacion.lower() == "si": # Convierte confirmación a minúsculas
+                print("¿Qué campo deseas editar?")
+                print("[1] Marca")
+                print("[2] Modelo")
+                print("[3] Año")
+                print("[4] Color")
+                print("[5] Precio")
+                campo = int(input("Ingresa el número del campo a editar: "))
+                if campo == 1:
+                    carro["Marca"] = input("Ingrese la nueva marca: ")
+                elif campo == 2:
+                    carro["Modelo"] = input("Ingrese el nuevo modelo: ")
+                elif campo == 3:
+                    carro["Año"] = input("Ingrese el nuevo año: ")
+                elif campo == 4:
+                    carro["Color"] = input("Ingrese el nuevo color: ")
+                elif campo == 5:
+                    carro["Precio"] = input("Ingrese el nuevo precio: $")
+                else:
+                    print("Campo no válido.")
+                print("Carro editado correctamente.")
+            else:
+                print("Edición cancelada.")
+            break
+    if not encontrado: # Si no se encontró el carro
+        print("Carro no encontrado.")
+
+def buscar(carros): # Función para buscar carros
+    imprimir_carros(carros) # Imprime los carros para que el usuario pueda ver los números
+    buscar = int(input("Ingrese el numero del carro que desea buscar: "))  # Convierte input a int
+
+    if buscar <= len(carros):
+        for carro in carros:    
+            if carro["Numero"] == buscar:
+                print("Carro encontrado, sus datos son:")
+                for clave, valor in carro.items(): # Itera sobre las claves y valores del carro
+                    print(clave + ": " + str(valor)) #Convierte valor a string
+                break
 
 def imprimir_carros(carros): 
     print("Lista de carros")
@@ -109,9 +160,9 @@ def main():
         # Opcion para modificar la informacion de un carro
         elif number == 3:
             while salida == 'si':
-                editar = input("Ingresa el numero del carro que deseas editar: ")
                 # Aqui va una funcion para editar carros 
                 # editar()
+                editar(carros)
                 salida = input("Deseas editar otro carro? (ingresa si/no): ")
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
@@ -121,9 +172,9 @@ def main():
         # Opcion para buscar carros
         elif number == 4:
             while salida == 'si':
-                buscar = input("Ingresa el numero del carro que desesas buscar: ")
+                
                 # Aqui va una funcion para buscar carros 
-                # buscar()
+                buscar(carros)
                 salida = input("Deseas buscar otro carro? (ingresa si/no): ")
                 # Funcion para hacer minuscula la informacion que ingrese el usuario y poder hacer una comparacion sin importar las mayusculas o minusculas
                 salida = str.lower(salida)
